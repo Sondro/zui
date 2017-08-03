@@ -1,15 +1,12 @@
 package;
 
-import kha.WindowOptions;
-import kha.WindowOptions.Position;
-
 class Main {
 	public static function main() {
 		var dwh = Std.int(kha.Display.width(0) / 2);
 		var dhh = Std.int(kha.Display.height(0) / 2);
 
-        var mwo: WindowOptions = { title : ' | main', width : 256, height : 256, x : Fixed(dwh - 256 - 64), y : Center };
-        var swo: WindowOptions = { title : ' | sub', width : 256, height : 256, x : Fixed(dwh + 64), y : Center };
+        var mwo:kha.WindowOptions = { title : ' | main', width : 256, height : 256, x : Fixed(dwh - 256 - 64), y : Center };
+        var swo:kha.WindowOptions = { title : ' | sub', width : 256, height : 256, x : Fixed(dwh + 64), y : Center };
 
 		kha.System.initEx('MultipleWindows', [mwo, swo], windowIds.push, kha.Assets.loadEverything.bind(assets_loadedHandler));
 	}
